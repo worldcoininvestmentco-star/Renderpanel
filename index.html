@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lucky Tech Hub Bot Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Lucky Tech Hub Bot Store</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#actions">Actions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About Lucky Tech Hub Bot</h2>
+      <p>The Lucky Tech Hub Bot is a professional WhatsApp bot designed for automation, support, and debugging. Developed by Lucky, it helps simplify WhatsApp automation and bot management.</p>
+    </section>
+    <section id="actions">
+      <h2>Bot Actions</h2>
+      <div class="buttons">
+        <button onclick="connectBot()">🔗 Connect Bot</button>
+        <button onclick="pairBot()">📱 Pair Bot</button>
+        <button onclick="contactOwner()">📩 Contact Owner</button>
+      </div>
+      <div id="status"></div>
+    </section>
+    <section id="contact">
+      <h2>Contact Owner</h2>
+      <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="form-status"></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Lucky Tech Hub. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
