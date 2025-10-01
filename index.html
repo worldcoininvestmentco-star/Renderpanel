@@ -1,0 +1,429 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lucky Tech Hub — Bot Store</title>
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --accent:#04d9bf;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,var(--bg) 0%, #061020 100%); color:#e6eef6; -webkit-font-smoothing:antialiased;}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{
+      width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#36b1ff);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(3,10,20,0.6);
+    }
+    .logo svg{width:40px;height:40px;filter:drop-shadow(0 6px 18px rgba(3,10,20,0.45));}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(4,10,20,0.6);}
+
+    /* bot info */
+    .bot-header{display:flex;align-items:center;gap:14px}
+    .avatar{width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,#0ea5a4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px}
+    .meta h2{margin:0;font-size:18px}
+    .meta small{color:var(--muted)}
+
+    .features{display:flex;gap:12px;margin-top:14px}
+    .feature{flex:1;background:var(--glass);padding:12px;border-radius:12px;text-align:center}
+    .feature b{display:block;font-size:16px}
+    .feature span{color:var(--muted);font-size:13px}
+
+    /* control panel */
+    .controls{display:flex;flex-direction:column;gap:12px}
+    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#36b1ff);color:#022;box-shadow:0 8px 22px rgba(6,22,30,0.5)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)}
+    .btn-danger{background:#ff5b6e;color:#fff}
+
+    .status{display:flex;gap:10px;align-items:center}
+    .dot{width:12px;height:12px;border-radius:50%;background:#6ee7b7;box-shadow:0 6px 22px rgba(46,204,113,0.12)}
+    .status.off .dot{background:#ffa8a8;box-shadow:none}
+
+    .pair-box{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .pair-input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.container{padding:18px;margin:20px}} 
+
+    /* subtle animations */
+    .pulse{animation:pulse 2.4s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden>
+        <!-- simple bot icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="7" width="18" height="12" rx="3" fill="white" opacity="0.12"/>
+          <circle cx="8.5" cy="13" r="1.4" fill="white"/>
+          <circle cx="15.5" cy="13" r="1.4" fill="white"/>
+          <rect x="8" y="4" width="8" height="2" rx="1" fill="white" opacity="0.12"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Lucky Tech Hub — Bot Store</h1>
+        <p class="lead">Showcase page for <strong>Lucky Tech Hub Bot</strong> — Pair, Connect and Contact the owner.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main class="card">
+        <div class="bot-header">
+          <div class="avatar">L</div>
+          <div class="meta">
+            <h2>Lucky Tech Hub Bot <small style="display:block;color:var(--muted)">v2.2.6 • WhatsApp automation</small></h2>
+            <div style="margin-top:8px;color:var(--muted);font-size:13px;max-width:70%">A lightweight, reliable WhatsApp assistant built for Lucky. Features: media handling, APK fetcher, song download, session helpers and more.</div>
+          </div>
+        </div>
+
+        <div class="features" style="margin-top:16px">
+          <div class="feature">
+            <b>Real-time</b>
+            <span>Auto responses & webhooks</span>
+          </div>
+          <div class="feature">
+            <b>Lightweight</b>
+            <span>Deploy anywhere</span>
+          </div>
+          <div class="feature">
+            <b>Secure</b>
+            <span>Session & file safety</span>
+          </div>
+        </div>
+
+        <section style="margin-top:18px">
+          <h3 style="margin:0 0 10px 0">About the bot</h3>
+          <p style="color:var(--muted);line-height:1.5">Lucky Tech Hub Bot is designed to help you automate WhatsApp workflows — download songs, fetch APKs, manage sessions and respond to users intelligently. It's modular: you can enable or disable features and pair new devices using a pairing code.</p>
+        </section>
+
+        <section style="margin-top:16px">
+          <h3 style="margin:0 0 10px 0">Quick actions</h3>
+          <div class="controls">
+            <div class="status" id="statusRow" aria-live="polite">
+              <div class="dot" id="statusDot"></div>
+              <div style="flex:1">
+                <div id="statusText">Connected to 1 session</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:4px">Last heartbeat: <span id="heartbeat">just now</span></div>
+              </div>
+              <button class="btn btn-ghost" id="refreshBtn">Refresh</button>
+            </div>
+
+            <div style="display:flex;gap:10px">
+              <button class="btn btn-primary" id="connectBtn">Connect</button>
+              <button class="btn" id="disconnectBtn">Disconnect</button>
+            </div>
+
+            <div class="pair-box">
+              <label style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px">Pair with device</label>
+              <div style="display:flex;gap:8px">
+                <input class="pair-input" id="pairCode" placeholder="Enter pairing code (ex: AB12-CD34)" />
+                <button class="btn btn-primary" id="pairBtn">Pair</button>
+              </div>
+              <div style="margin-top:8px;color:var(--muted);font-size:13px">Or use the <strong>Pair</strong> button in WhatsApp to link a client.</div>
+            </div>
+
+            <div style="display:flex;gap:10px;align-items:center">
+              <button class="btn btn-ghost" id="connectedBtn">Connected Button</button>
+              <button class="btn btn-ghost" id="pairModalBtn">Pair Button</button>
+              <a id="contactOwner" class="btn" href="https://wa.me/256700000000?text=Hi%20Lucky%20Tech%20Hub%20owner,%20I%20want%20help" target="_blank" rel="noopener noreferrer">Contact Owner</a>
+            </div>
+
+          </div>
+        </section>
+
+        <section style="margin-top:16px">
+          <h3 style="margin:0 0 10px 0">Documentation</h3>
+          <ul style="color:var(--muted);line-height:1.7">
+            <li><strong>Commands</strong> — apk, song, clearsession, pair, menu</li>
+            <li><strong>Deploy</strong> — run on Render, VPS or Docker</li>
+            <li><strong>Support</strong> — contact the owner via WhatsApp</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <aside class="card pulse">
+        <h3 style="margin-top:0">Owner & Purchase</h3>
+        <p style="color:var(--muted)">Owned & maintained by <strong>Lucky</strong> — WhatsApp bot developer. You can contact to request customizations, deployment help or purchase a license.</p>
+
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+          <a class="btn btn-primary" id="buyBtn" href="#">Buy / License</a>
+          <button class="btn btn-ghost" id="demoBtn">Request Demo</button>
+        </div>
+
+        <div style="margin-top:14px">
+          <h4 style="margin:0 0 8px 0">Pairing</h4>
+          <p style="color:var(--muted);margin:0 0 10px 0">Use the pair button to generate a QR or a code — this demo page simulates pairing for preview.</p>
+
+          <div style="display:flex;gap:10px">
+            <input id="simPair" class="pair-input" placeholder="Simulate device name" />
+            <button class="btn" id="simPairBtn">Simulate</button>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+        <div style="color:var(--muted);font-size:13px">Version <strong>2.2.6</strong> • Last updated: Sep 30, 2025</div>
+      </aside>
+    </div>
+
+    <footer>
+      Built with ❤️ by Lucky • Want changes? Click <a href="#" id="openContactFooter" style="color:var(--accent);text-decoration:none">Contact Owner</a>
+    </footer>
+  </div>
+
+  <!-- modal (hidden by default) -->
+  <div id="modal" role="dialog" aria-hidden="true" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:60">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.7),rgba(2,6,23,0.85));backdrop-filter:blur(6px)"></div>
+    <div style="position:relative;z-index:61;max-width:520px;width:92%">
+      <div class="card" style="padding:20px">
+        <h3 id="modalTitle">Pair device</h3>
+        <p id="modalBody" style="color:var(--muted)">Scan the QR shown here with WhatsApp to pair, or paste the code into your client.</p>
+        <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+          <div style="flex:1;background:#071025;border-radius:12px;padding:12px;text-align:center">
+            <div id="qr" style="width:180px;height:180px;margin:0 auto;background:linear-gradient(45deg,#0ea5a4,#36b1ff);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#022;font-weight:800">QR</div>
+            <div style="color:var(--muted);margin-top:8px;font-size:13px">Pairing code: <strong id="modalCode">AB12-CD34</strong></div>
+          </div>
+          <div style="width:120px;display:flex;flex-direction:column;gap:8px">
+            <button class="btn btn-primary" id="copyCode">Copy</button>
+            <button class="btn" id="closeModal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basic interactive behaviour for demo site
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+    const heartbeat = document.getElementById('heartbeat');
+    const connectBtn = document.getElementById('connectBtn');
+    const disconnectBtn = document.getElementById('disconnectBtn');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const pairBtn = document.getElementById('pairBtn');
+    const pairCode = document.getElementById('pairCode');
+    const connectedBtn = document.getElementById('connectedBtn');
+    const pairModalBtn = document.getElementById('pairModalBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const modalCode = document.getElementById('modalCode');
+    const copyCode = document.getElementById('copyCode');
+    const simPairBtn = document.getElementById('simPairBtn');
+    const simPair = document.getElementById('simPair');
+    const buyBtn = document.getElementById('buyBtn');
+    const demoBtn = document.getElementById('demoBtn');
+
+    let connected = true;
+
+    function updateStatus(){
+      if(connected){
+        statusDot.style.background = '#6ee7b7';
+        statusText.textContent = 'Connected to 1 session';
+        heartbeat.textContent = 'just now';
+        document.getElementById('statusRow').classList.remove('off');
+      } else {
+        statusDot.style.background = '#ffa8a8';
+        statusText.textContent = 'No session connected';
+        heartbeat.textContent = '—';
+        document.getElementById('statusRow').classList.add('off');
+      }
+    }
+
+    connectBtn.addEventListener('click', ()=>{
+      connected = true; updateStatus(); toast('Bot connected')
+    })
+    disconnectBtn.addEventListener('click', ()=>{
+      connected = false; updateStatus(); toast('Bot disconnected')
+    })
+    refreshBtn.addEventListener('click', ()=>{
+      // simulate refresh heartbeat
+      heartbeat.textContent = 'a few seconds ago';
+      toast('Refreshed status')
+    })
+
+    pairBtn.addEventListener('click', ()=>{
+      const code = pairCode.value.trim();
+      if(!code){ toast('Please enter a pairing code'); return }
+      // simulate pairing
+      modalCode.textContent = code.toUpperCase();
+      openModal('Pairing', 'Scan the QR with WhatsApp or paste the code into your client.');
+    })
+
+    connectedBtn.addEventListener('click', ()=>{
+      toast('Connected button pressed — this could trigger a webhook');
+    })
+    pairModalBtn.addEventListener('click', ()=>{
+      // generate random code
+      const r = Math.random().toString(36).slice(2,8).toUpperCase();
+      const code = r.slice(0,4) + '-' + r.slice(4,6);
+      modalCode.textContent = code;
+      openModal('Pair device', 'Scan the QR shown here with WhatsApp to pair.');
+    })
+
+    function openModal(title, body){
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalBody').textContent = body;
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    closeModal.addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true') })
+
+    copyCode.addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(modalCode.textContent); toast('Copied pairing code') }catch(e){ toast('Copy failed — select code and press Ctrl/Cmd+C') }
+    })
+
+    simPairBtn.addEventListener('click', ()=>{
+      const name = simPair.value.trim() || 'Device-'+Math.floor(Math.random()*999);
+      toast(`Simulated pairing from ${name}`);
+    })
+
+    buyBtn.addEventListener('click', ()=>{ toast('Purchase flow not implemented in demo — contact owner') })
+    demoBtn.addEventListener('click', ()=>{ toast('Demo requested — owner will contact you via WhatsApp') })
+
+    document.getElementById('openContactFooter').addEventListener('click',(e)=>{ e.preventDefault(); window.open(document.getElementById('contactOwner').href,'_blank') })
+
+    // simple toast
+    function toast(msg){
+      const t = document.createElement('div');
+      t.textContent = msg; t.style.position='fixed'; t.style.right='18px'; t.style.bottom='18px'; t.style.background='rgba(2,6,23,0.9)'; t.style.color='#eafaf7'; t.style.padding='10px 14px'; t.style.borderRadius='10px'; t.style.boxShadow='0 10px 30px rgba(3,10,20,0.6)'; t.style.zIndex=9999; document.body.appendChild(t);
+      setTimeout(()=>{ t.style.transition='all 300ms ease'; t.style.opacity=0; t.style.transform='translateY(8px)'; setTimeout(()=>t.remove(),300) },2000)
+    }
+
+    // initialize
+    updateStatus();
+  </script>
+</body>
+</html>
+
+<!-- SERVER & INTEGRATION GUIDE (ADDED) -->
+
+<!--
+  Added server-side example (server.js) using Express + socket.io + qrcode + Stripe sample endpoint.
+  Also added frontend hooks that will connect to the server via Socket.IO to request real QR pairing, send pairing results via webhooks, and submit the contact form or start a Stripe Checkout session.
+
+  See the new code files below — drop them into your project root and run `npm install` with the provided package.json.
+-->
+
+
+
+## server.js (Node.js example)
+
+```js
+// server.js
+// Example Node + Express server providing:
+// - Socket.IO pairing flow that emits a QR data URL to the browser
+// - /webhook endpoint to receive pairing/webhook events from bot backends
+// - /contact endpoint for a contact form
+// - /create-checkout-session (Stripe) sample
+
+require('dotenv').config();
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const QRCode = require('qrcode');
+const bodyParser = require('body-parser');
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+// In-memory store for pairing sessions (demo). In production, use DB or cache.
+const pairSessions = new Map();
+
+// When a client connects via socket.io
+io.on('connection', (socket) => {
+  console.log('Client connected', socket.id);
+
+  socket.on('request-pair', async (payload) => {
+    // payload can include requested ttl, device meta, etc.
+    const sessionId = Math.random().toString(36).slice(2,10).toUpperCase();
+    // For demo we generate a URL or code that your bot server would also accept
+    const pairingData = `pair:${sessionId}`; // replace with real pairing token from your bot
+
+    // create QR image data URL
+    try{
+      const qrDataUrl = await QRCode.toDataURL(pairingData, { errorCorrectionLevel: 'H' });
+      // store minimal session
+      pairSessions.set(sessionId, { qr: pairingData, created: Date.now(), state: 'pending' });
+
+      // emit to requesting socket a pairing object
+      socket.emit('pairing-ready', { sessionId, qrDataUrl, code: sessionId.match(/.{1,4}/g).join('-') });
+
+      // (Optional) set a TTL
+      setTimeout(()=>{ if(pairSessions.has(sessionId)) pairSessions.delete(sessionId) }, 5*60*1000);
+    }catch(err){
+      console.error('QR gen failed', err);
+      socket.emit('pairing-error', { message: 'QR generation failed' });
+    }
+  });
+
+  socket.on('disconnect', ()=>{ console.log('Socket disconnected', socket.id) });
+});
+
+// Webhook endpoint that your bot backend can call to notify pairing success
+app.post('/webhook', (req, res) => {
+  // Expect body like { sessionId, status, meta }
+  console.log('Webhook payload', req.body);
+  const { sessionId, status, meta } = req.body || {};
+  if(sessionId && pairSessions.has(sessionId)){
+    pairSessions.set(sessionId, { ...pairSessions.get(sessionId), state: status || 'unknown', meta });
+    // notify any connected dashboard clients that session updated
+    io.emit('pairing-update', { sessionId, status, meta });
+  }
+  return res.status(200).json({ ok: true });
+});
+
+// Contact form endpoint
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body || {};
+  console.log('Contact form submitted', { name, email, message });
+  // TODO: Save to DB or forward to email via SMTP / third-party (SendGrid, Mailgun)
+  return res.json({ ok: true, message: 'Thanks — we will contact you soon.' });
+});
+
+// Stripe checkout sample (server creates session)
+app.post('/create-checkout-session', async (req, res) => {
+  // This requires STRIPE_SECRET in env
+  const stripeSecret = process.env.STRIPE_SECRET;
+  if(!stripeSecret) return res.status(500).json({ error: 'Stripe secret not set' });
+
+  const stripe = require('stripe')(stripeSecret);
+  try{
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{ price_data: { currency: 'usd', product_data: { name: 'Lucky Tech Hub Bot License' }, unit_amount: 1999 }, quantity: 1 }],
+      mode: 'payment',
+      success_url: (req.headers.origin || 'http://localhost:3000') + '/?success=1',
+      cancel_url: (req.headers.origin || 'http://localhost:3000') + '/?canceled=1'
+    });
+    res.json({ id: session.id, url: session.url });
+  }catch(err){
+    console.error(err);
+    res.status(500).json({ error: 'stripe_error', details: err.message });
+  }
+});
+
+const PORT = process.env.PORT || 30
